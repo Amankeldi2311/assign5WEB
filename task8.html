@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divide sentences</title>
+    <style>
+        .highlight {
+            background: blue;
+            color: white;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p>In tech, programming languages like JavaScript and Python are essential! Are you ready to dive in?
+        Innovation is constant!</p>
+    <button onclick="splitSentences()">Split Sentences</button>
+
+    <script>
+        function splitSentences() {
+            const p = document.querySelector('p');
+            const sentences = p.innerText.split(/(?<=[.!?])\s*/);
+            p.innerHTML = sentences.join('<br>');
+        }
+    </script>
+</body>
+
+</html>

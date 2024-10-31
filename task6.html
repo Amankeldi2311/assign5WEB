@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Highlighting</title>
+    <style>
+        body{
+            font-size: large;
+        }
+        .highlight {
+            background-color: rgb(255, 247, 0);
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+    <h1>HIGHLIGHT</h1>
+    <p id="text">
+        
+        In the rapidly advancing world of technology,
+         programming languages have become indispensable tools for developers and engineers.
+         Among the numerous options, JavaScript stands out due to its flexibility and extensive application in web development,
+         allowing for the creation of dynamic and interactive user experiences. As applications grow in complexity,
+         the need for skilled developers continues to rise.
+        
+        Besides JavaScript, languages such as Python and Ruby are valued for their simplicity and effectiveness across various fields, 
+        from data analysis to web development frameworks.
+         Additionally, a solid grasp of algorithms and data structures is essential for enhancing software performance and efficiency.
+         In this fast-evolving industry, continuous learning and adaptability are key to staying current with ongoing innovation.
+    </p>
+    <button onclick="highlightWords()">Highlight Words</button>
+
+    <script>
+        function highlightWords() {
+            const paragraph = document.querySelector('p');
+            paragraph.innerHTML = paragraph.innerText.split(' ').map(word => 
+                word.length > 7 ? `<span class="highlight">${word}</span>`:
+                word.length < 3 ? `<span style="font-weight: bold">${word}</span>` : word
+            )
+            .join(' ');
+        }
+    </script>
+</body>
+</html>

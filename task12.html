@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cylinder Volume Calculator</title>
+    <style>
+        body {
+            font-size: large;
+        }
+
+        * {
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Input Radius Value and Get the Volume of the Cylinder</h2>
+        <label for="cylinder-radius">Cylinder Radius:</label>
+        <br>
+        <input type="number" id="cylinder-radius" placeholder="Enter radius">
+        <br>
+        <label for="cylinder-height">Cylinder Height:</label>
+        <br>
+        <input type="number" id="cylinder-height" placeholder="Enter height">
+        <br>
+        <label for="cylinder-volume">Cylinder Volume:</label>
+        <br>
+        <input type="text" id="cylinder-volume" placeholder="Volume will appear here" readonly>
+        <br>
+        <button onclick="calculateCylinderVolume()">Calculate</button>
+
+    </div>
+
+    <script>
+        function calculateCylinderVolume() {
+            const radius = parseFloat(document.getElementById('cylinder-radius').value);
+            const height = parseFloat(document.getElementById('cylinder-height').value);
+            const volume = Math.PI * Math.pow(radius, 2) * height;
+            document.getElementById('cylinder-volume').value = volume.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>

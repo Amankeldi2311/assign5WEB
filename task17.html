@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            padding: 5rem;
+            background-color:rgb(176, 215, 180);
+            width: 30rem;
+            align-items: center;
+        }
+        .container{
+            background-color: white;
+            text-align: center;
+        }
+        .container .month{
+            background-color: rgb(3, 90, 19);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 2rem;   
+        }
+
+        .container .day{
+            padding-top: 10px;
+            opacity: 0.3;
+            font-size: 1.2rem;
+        }
+
+        .container .date{
+            margin: 1rem 0;
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+        .container .year{
+            font-size: 1.2rem;
+            opacity: 0.3;
+            padding-bottom: 1rem;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="month"></div>
+        <div class="day"></div>
+        <div class="date"></div>
+        <div class="year"></div>
+    </div>
+    <script>
+        let month = document.querySelector(".month");
+        let day = document.querySelector(".day");
+        let date = document.querySelector(".date");
+        let year = document.querySelector(".year");
+        
+        let currentDate = new Date();
+
+        var months = ["January", "February", "March", "April", "Mya", "June", "July", "AUgust", "September", "October", "November", "December"];
+        var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        month.innerHTML = months[currentDate.getMonth()];
+        day.innerHTML = days[currentDate.getDay()];
+        date.innerHTML = currentDate.getDate();
+        year.innerHTML = currentDate.getFullYear();
+
+
+    </script>
+</body>
+</html>

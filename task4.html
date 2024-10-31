@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Replace Characters</h1>
+    <input type="text" id="inputString" placeholder="Enter a string" />
+    <button onclick="replaceCharacters()">Replace</button>
+
+    <script>
+        function replaceCharacters() {
+            const input = document.getElementById('inputString').value;
+            const replacedString = input.split('').map(char => {
+                const charCode = char.charCodeAt(0);
+                if (char >= 'a' && char <= 'z') {
+                    return char === 'z' ? 'a' : String.fromCharCode(charCode + 1);
+                }
+                else if (char >= 'A' && char <= 'Z') {
+                    return char === 'Z' ? 'A' : String.fromCharCode(charCode + 1);
+                }
+                return char;
+            }).join('');
+
+            alert(`Replaced String: "${replacedString}"`);
+        }
+    </script>
+</body>
+</html>

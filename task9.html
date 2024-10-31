@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count words</title>
+    <style>
+        .highlight {
+            background: blue;
+            color: white;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p>In tech, programming languages like JavaScript and Python are essential! Are you ready to dive in?
+        Innovation is constant!</p>
+    <button onclick="countWords()">Count Words</button>
+
+    <script>
+        function countWords() {
+            const p = document.querySelector('p');
+            const wordCount = p.innerText.split(/\s/).filter(word => word.length > 0).length; 
+            alert(`Number of words: ${wordCount}`);
+        }
+    </script>
+</body>
+
+</html>

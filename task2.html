@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Word Sorter</h1>
+    <input type="text" id="sentence" placeholder="Enter a sentence" />
+    <button onclick="sort()">Sort</button>
+    <p id="result"></p>
+
+    <script>
+        function sort() {
+            const sentence = document.getElementById('sentence').value;
+            
+            const sortedWords = sentence.split(' ')
+                .map(word => word.split('').sort().join(''))
+                .join(' ');
+
+            document.getElementById('result').textContent = sortedWords;
+        }  
+    </script>
+</body>
+</html>     

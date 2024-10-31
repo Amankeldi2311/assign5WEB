@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace characters</title>
+    <style>
+        .highlight {
+            background: rgb(191, 255, 0);
+            color: white;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <p>I'm absolutely ready to dive in! Languages like JavaScript and Python are vital in tech,
+         each offering unique benefits.
+          With innovation sparking constant evolution, it’s a thrilling field for exploration and growth.
+           Let’s jump into any tech topics or projects you have in mind!</p>
+    <button onclick="replaceCharacters()">Process Text</button>
+
+    <script>
+        function replaceCharacters() {
+            const p = document.querySelector('p');
+            const words = Array.from(p.innerText.split(' '));
+            words.forEach((word, index) => {
+                words[index] = word.replace(/\?/g, '*').replace(/!/g, '@');
+            });
+            p.innerHTML = words.join(' ');
+        }
+    </script>
+</body>
+
+</html>

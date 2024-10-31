@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere Volume Calculator</title>
+    <style>
+       body{
+        font-size: large;
+       }
+       *{
+        margin: 4px;
+       }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Input Radius Value and Get the Volume of the Sphere</h2>
+        <br>
+        <label for="radius">Radius:</label>
+        <br>
+        <input type="number" id="radius" placeholder="Enter radius">
+        <br>
+        <label for="volume">Volume:</label>
+        <br>
+        <input type="text" id="volume" placeholder="Volume will appear here" readonly>
+        <br>
+        <button onclick="calculateVolume()">Calculate</button>
+    </div>
+    
+    <script>
+        function calculateVolume() {
+            const radius = parseFloat(document.getElementById('radius').value);
+            const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+            document.getElementById('volume').value = volume.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

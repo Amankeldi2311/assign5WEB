@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const value1 = parseFloat(prompt("Enter the first value:"));
+        const value2 = parseFloat(prompt("Enter the second value:"));
+        const value3 = parseFloat(prompt("Enter the third value:"));
+
+        const values = [value1, value2, value3];
+
+        let nearest = values[0];
+        let farthest = values[0];
+        let minDiff = Math.abs(values[0] - 100);
+        let maxDiff = Math.abs(values[0] - 100);
+
+        for (let value of values) {
+            const diff = Math.abs(value - 100);
+            if (diff < minDiff) {
+                nearest = value;
+                minDiff = diff;
+            }
+            if (diff > maxDiff) {
+                farthest = value;
+                maxDiff = diff;
+            }
+        }
+
+        console.log("The nearest one is " + nearest);
+        console.log("The farthest one is " + farthest);
+
+    </script>
+</body>
+</html>

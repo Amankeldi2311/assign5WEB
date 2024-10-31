@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>highlight</title>
+    <style>
+        .italic {
+            font-style: italic;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <p>In tech, programming languages like JavaScript and Python are essential! Are you ready to dive in?
+        Innovation is constant!</p>
+    <button onclick="highlightWords()">Highlight Words</button>
+
+    <script>
+        function highlightWords() {
+            const p = document.querySelector('p');
+            const highlightedWords = p.innerText.split(' ').map(word =>
+                word.startsWith('a') || word.startsWith('A') ? `<span class="italic">${word}</span>` :
+                    word.endsWith('y') || word.endsWith('Y') ? `<span class="underline">${word}</span>` :
+                        word
+            ).join(' ');
+
+            p.innerHTML = highlightedWords;
+        }
+
+    </script>
+</body>
+
+</html>

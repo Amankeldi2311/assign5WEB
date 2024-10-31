@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Volume Calculator</title>
+    <style>
+        body {
+            font-size: large;
+        }
+
+        * {
+            margin: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Prism Volume Calculator</h2>
+        
+        <label>Base Area:</label>
+        <br>
+        <input type="number" id="prism-base" placeholder="Enter base area">
+        <br>
+        
+        <label>Height:</label>
+        <br>
+        <input type="number" id="prism-height" placeholder="Enter height">
+        <br>
+        
+        <label>Volume:</label>
+        <br>
+        <input type="text" id="prism-volume" placeholder="Volume will appear here" readonly>
+        <br>
+        
+        <button onclick="calculatePrismVolume()">Calculate</button>
+    </div>
+    
+    <script>
+        function calculatePrismVolume() {
+            const baseArea = parseFloat(document.getElementById('prism-base').value);
+            const height = parseFloat(document.getElementById('prism-height').value);
+            const volume = baseArea * height;
+            document.getElementById('prism-volume').value = volume.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>

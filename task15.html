@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area Calculator</title>
+    <style>
+        body {
+            font-size: large;
+        }
+        * {
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Triangle Area Calculator</h2>
+        
+        <label>Base:</label>
+        <br>
+        <input type="number" id="triangle-base" placeholder="Enter base">
+        <br>
+        
+        <label>Height:</label>
+        <br>
+        <input type="number" id="triangle-height" placeholder="Enter height">
+        <br>
+        
+        <label>Area:</label>
+        <br>
+        <input type="text" id="triangle-area" placeholder="Area will appear here" readonly>
+        <br>
+        
+        <button onclick="calculateTriangleArea()">Calculate</button>
+    </div>
+    
+    <script>
+        function calculateTriangleArea() {
+            const base = parseFloat(document.getElementById('triangle-base').value);
+            const height = parseFloat(document.getElementById('triangle-height').value);
+            const area = 0.5 * base * height;
+            document.getElementById('triangle-area').value = area.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
